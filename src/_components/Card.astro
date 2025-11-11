@@ -1,0 +1,50 @@
+---
+import AboutCard from "./cards/AboutCard.astro";
+import InfoCard from "./cards/InfoCard.astro";
+import ProjectCard from "./cards/ProjectCard.astro";
+
+interface ProjectProps {
+  title?: string;
+  imageSrc?: string;
+  description?: string;
+  liveUrl?: string;
+  detailsUrl?: string;
+  ctaText?: string;
+}
+
+interface AboutProps {
+  heading?: string;
+  profileSrc?: string;
+  description?: string;
+  resumeUrl?: string;
+}
+
+interface InfoProps {
+  heading?: string;
+  text?: string;
+  skills?: string[];
+}
+
+interface Props {
+  project?: ProjectProps;
+  about?: AboutProps;
+  info?: InfoProps;
+}
+
+const { project = {}, about = {}, info = {} } = Astro.props as Props;
+---
+
+<div>
+  <h2 class="text-3xl font-bold text-gray-900 mb-6">Cards</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12">
+    <!-- Card 1: Project Card -->
+    <ProjectCard {...project} />
+
+    <!-- Card 2: About Me Card -->
+    <AboutCard {...about} />
+
+    <!-- Card 3: Simple Info Card -->
+    <InfoCard {...info} />
+  </div>
+</div>

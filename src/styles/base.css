@@ -1,0 +1,15 @@
+* {
+  /* Reset CSS */
+  @apply box-border m-0 p-0;
+  font-family: "Kalam", cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply relative min-h-screen w-screen max-w-screen overflow-x-hidden overflow-y-auto bg-primary text-text-default font-sans;
+}
+
+strong {
+  @apply text-primary;
+}

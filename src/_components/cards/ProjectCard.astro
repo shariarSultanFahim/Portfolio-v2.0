@@ -1,0 +1,60 @@
+---
+interface Props {
+  title?: string;
+  imageSrc?: string;
+  description?: string;
+  liveUrl?: string;
+  detailsUrl?: string;
+  ctaText?: string;
+}
+
+const {
+  title = "Project Name",
+  imageSrc = "https://placehold.co/600x360/ddd/111?text=Project",
+  description = "Showcase of a web development project using React and Node.js.",
+  liveUrl = "#",
+  detailsUrl = "#",
+  ctaText = "View Details",
+} = Astro.props as Props;
+---
+
+<div class="manga-card flex flex-col">
+  <!-- Card Image Area -->
+  <div class="manga-card-img">
+    <img src={imageSrc} alt={title} class="w-full h-auto object-cover" />
+  </div>
+
+  <!-- Card Content Area -->
+  <div class="p-6 flex flex-col flex-grow">
+    <h3 class="text-2xl font-bold text-black mb-2">{title}</h3>
+    <p class="text-lg text-gray-700 mb-6 flex-grow">{description}</p>
+
+    <!-- Card Footer -->
+    <div class="flex justify-between items-center">
+      <a
+        href={liveUrl}
+        class="manga-btn manga-btn-secondary !p-2 !shadow-md !border-2"
+        title="View Live Site"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+          ></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+          ></path>
+        </svg>
+      </a>
+
+      <a href={detailsUrl} class="manga-btn manga-btn-dark"> {ctaText} </a>
+    </div>
+  </div>
+</div>

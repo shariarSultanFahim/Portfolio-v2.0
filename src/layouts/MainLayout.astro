@@ -1,0 +1,47 @@
+---
+import "@/styles/global.css";
+
+// Components
+
+const {
+  title = "Shariar Sultan Fahim - Frontend Engineer",
+  description = "Shariar Sultan Fahim is a frontend engineer specializing in web and mobile applications.",
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+    <!-- Smooth Scroll Wrapper -->
+    <div id="smooth-scroll-content" class="min-h-screen">
+      <slot />
+    </div>
+  </body>
+</html>
+
+<script>
+  // GSAP Plugins
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  // ScrollSmoother requires ScrollTrigger
+  import { ScrollSmoother } from "gsap/ScrollSmoother";
+
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // creates the scrollSmoother
+    ScrollSmoother.create({
+      content: "#smooth-scroll-content",
+      smooth: 3,
+      effects: true,
+      normalizeScroll: true,
+    });
+  });
+</script>

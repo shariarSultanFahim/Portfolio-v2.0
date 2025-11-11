@@ -1,0 +1,30 @@
+---
+interface Props {
+  heading?: string;
+  profileSrc?: string;
+  description?: string;
+  resumeUrl?: string;
+}
+
+const {
+  heading = "ABOUT ME",
+  profileSrc = "https://placehold.co/120x120/eee/111?text=:)",
+  description = "A passionate full-stack developer and UI/UX enthusiast. I love crafting digital experiences and solving complex problems.",
+  resumeUrl = "#",
+} = Astro.props as Props;
+---
+
+<div class="manga-card flex flex-col p-6 items-center">
+  <!-- Profile Picture -->
+  <img src={profileSrc} alt="Profile Picture" class="manga-profile-pic mb-4" />
+
+  <h3 class="text-3xl font-bold text-black mb-2">{heading}</h3>
+
+  <div class="manga-divider"></div>
+
+  <p class="text-lg text-gray-800 text-center mb-6">{description}</p>
+
+  <a href={resumeUrl} class="manga-btn manga-btn-primary mt-auto">
+    My Resume
+  </a>
+</div>

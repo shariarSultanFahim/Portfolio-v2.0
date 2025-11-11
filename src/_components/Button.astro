@@ -1,0 +1,22 @@
+---
+// MangaButton.astro
+// Props: label, href?, size ('sm'|'md'|'lg'), ariaLabel
+interface Props {
+  label?: string;
+  href?: string;
+  ariaLabel?: string;
+  type?: "primary" | "secondary" | "dark";
+}
+const {
+  label = "VIEW",
+  href = "#",
+  ariaLabel,
+  type = "primary",
+} = Astro.props as Props;
+
+const aria = ariaLabel ?? label;
+---
+
+<a class="inline-block" href={href} aria-label={aria}>
+  <button class=`manga-btn manga-btn-${type}`> {label} </button>
+</a>

@@ -1,0 +1,68 @@
+---
+import Button from "@/_components/Button.astro";
+import AboutCard from "@/_components/cards/AboutCard.astro";
+import InfoCard from "@/_components/cards/InfoCard.astro";
+import ProjectCard from "@/_components/cards/ProjectCard.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
+---
+
+<MainLayout>
+  <div class="w-full max-w-5xl">
+    <!-- Header -->
+    <h1 class="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-4">
+      Manga Style Portfolio
+    </h1>
+    <p class="text-xl text-center text-gray-700 mb-12">UI Components Demo</p>
+
+    <!-- === BUTTONS === -->
+    <div class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Buttons</h2>
+      <div
+        class="flex flex-wrap items-center justify-center gap-6 p-8 bg-white border-2 border-gray-300 border-dashed rounded-lg"
+      >
+        <!-- Primary Hatched Button -->
+        <Button label="Explore Projects" type="primary" />
+
+        <!-- Secondary Outline Button -->
+        <Button label="Contact Me" type="secondary" />
+
+        <!-- Dark Filled Button -->
+        <Button label="Download CV" type="dark" />
+      </div>
+    </div>
+
+    <!-- === CARDS === -->
+    <div>
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Cards</h2>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12"
+      >
+        <!-- Card 1: Project Card -->
+        <ProjectCard
+          title="Project Name"
+          imageSrc="https://placehold.co/600x360/ddd/111?text=Project"
+          description="Showcase of a web development project using React and Node.js."
+          liveUrl="#"
+          detailsUrl="#"
+          ctaText="View Details"
+        />
+
+        <!-- Card 2: About Me Card -->
+        <AboutCard
+          heading="ABOUT ME"
+          profileSrc="https://placehold.co/120x120/eee/111?text=:)"
+          description="A passionate full-stack developer and UI/UX enthusiast. I love crafting digital experiences and solving complex problems."
+          resumeUrl="#"
+        />
+
+        <!-- Card 3: Simple Info Card -->
+        <InfoCard
+          heading="My Skills"
+          text="I'm comfortable with a wide range of technologies."
+          skills={["React", "Node.js", "Tailwind", "Python", "Figma"]}
+        />
+      </div>
+    </div>
+  </div>
+</MainLayout>

@@ -1,0 +1,13 @@
+@import "./fonts.css";
+
+@theme default {
+  /* Colors */
+  --color-background-base: #ffffff;
+  --color-background-dark: #ffffff;
+  --color-text-default: #000000;
+  --color-primary: #fbfbfb;
+  --color-card: #fbfbfb;
+
+  /* Fonts */
+  --font-sans: "Kalam", cursive;
+}
