@@ -1,3 +1,9 @@
+.dotted-bg {
+  background-color: #f0f0f0;
+  background-image: radial-gradient(#ccc 1px, transparent 1px);
+  background-size: 10px 10px;
+}
+
 .manga-btn {
   display: inline-block;
   padding: 10px 24px;
