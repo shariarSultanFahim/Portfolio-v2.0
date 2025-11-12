@@ -1,5 +1,4 @@
 ---
-import Button from "@/_components/Button.astro";
 interface Props {
   title?: string;
   imageSrc?: string;
@@ -14,8 +13,6 @@ const {
   imageSrc = "https://placehold.co/600x360/ddd/111?text=Project",
   description = "Showcase of a web development project using React and Node.js.",
   liveUrl = "#",
-  detailsUrl = "#",
-  ctaText = "View Details",
 } = Astro.props as Props;
 ---
 
@@ -26,18 +23,18 @@ const {
       src={imageSrc}
       alt={title}
       class="w-full h-full rounded-lg object-cover"
+      style="filter:grayscale(100%)"
     />
   </div>
 
   <!-- Card Content Area -->
   <div class="p-6 flex flex-col flex-grow">
-    <h3 class="text-2xl font-bold text-black mb-2">{title}</h3>
-    <p class="text-lg text-gray-700 mb-6 flex-grow">{description}</p>
-
-    <!-- Card Footer -->
-    <div class="flex justify-between items-center">
-      <!-- <a
+    <div class="flex justify-between items-center mb-2">
+      <h3 class="text-2xl font-bold text-black mb-2">{title}</h3>
+      <a
         href={liveUrl}
+        target="_blank"
+        rel="noopener noreferrer"
         class="manga-btn manga-btn-secondary !p-2 !shadow-md !border-2"
         title="View Live Site"
       >
@@ -48,18 +45,14 @@ const {
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="3"
+          stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
+          class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right"
+          ><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg
         >
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
-          ></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
-          ></path>
-        </svg>
-      </a> -->
-
-      <Button label={ctaText} href={detailsUrl} type="primary" />
+      </a>
     </div>
+    <p class="text-lg text-gray-700 flex-grow">{description}</p>
   </div>
 </div>
