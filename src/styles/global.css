@@ -6,3 +6,4 @@
 @import "./base.css" layer(base);
 @import "./components.css" layer(components);
 @import "./fonts.css" layer(components);
+@import "./work.css" layer(components);
