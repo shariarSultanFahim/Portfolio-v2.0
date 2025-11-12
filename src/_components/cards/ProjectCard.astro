@@ -1,4 +1,5 @@
 ---
+import Button from "@/_components/Button.astro";
 interface Props {
   title?: string;
   imageSrc?: string;
@@ -20,8 +21,12 @@ const {
 
 <div class="manga-card flex flex-col">
   <!-- Card Image Area -->
-  <div class="manga-card-img">
-    <img src={imageSrc} alt={title} class="w-full h-auto object-cover" />
+  <div class="manga-card-img p-2 overflow-hidden">
+    <img
+      src={imageSrc}
+      alt={title}
+      class="w-full h-full rounded-lg object-cover"
+    />
   </div>
 
   <!-- Card Content Area -->
@@ -31,7 +36,7 @@ const {
 
     <!-- Card Footer -->
     <div class="flex justify-between items-center">
-      <a
+      <!-- <a
         href={liveUrl}
         class="manga-btn manga-btn-secondary !p-2 !shadow-md !border-2"
         title="View Live Site"
@@ -52,9 +57,9 @@ const {
           <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
           ></path>
         </svg>
-      </a>
+      </a> -->
 
-      <a href={detailsUrl} class="manga-btn manga-btn-dark"> {ctaText} </a>
+      <Button label={ctaText} href={detailsUrl} type="primary" />
     </div>
   </div>
 </div>

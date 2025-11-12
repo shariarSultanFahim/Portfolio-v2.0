@@ -7,7 +7,7 @@ const about = [
     icon: "heroicons-outline:pencil",
     bgColor: "bg-yellow-100",
     textColor: "text-yellow-600",
-    rotate: "rotate(-3deg)",
+    rotate: "rotate-[-3deg]",
   },
   {
     title: "Prototyping",
@@ -16,7 +16,7 @@ const about = [
     icon: "heroicons-outline:cube",
     bgColor: "bg-blue-100",
     textColor: "text-blue-600",
-    rotate: "rotate(2deg)",
+    rotate: "rotate-[2deg]",
   },
   {
     title: "Applications Development",
@@ -25,7 +25,7 @@ const about = [
     icon: "heroicons-outline:code",
     bgColor: "bg-pink-100",
     textColor: "text-pink-600",
-    rotate: "rotate(-1deg)",
+    rotate: "rotate-[-1deg]",
   },
 ];
 ---
@@ -44,12 +44,12 @@ const about = [
     />
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
     {
       about.map((item) => (
         <div
-          class={`manga-card ${item.bgColor} flex flex-col items-center text-center py-8 px-6`}
-          style={`transform: ${item.rotate}`}
+          class={`manga-card ${item.bgColor} flex flex-col items-center text-center py-8 px-6 
+            transform ${item.rotate} transition-transform duration-300 ease-in-out hover:rotate-0`}
         >
           <div class={`${item.bgColor}`}>
             <img

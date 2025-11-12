@@ -1,0 +1,57 @@
+---
+import ProjectCard from "./cards/ProjectCard.astro";
+
+const projects = [
+  {
+    title: "Wifu Engine",
+    description:
+      "A lightweight, extensible engine for creating 2D anime-style transparent overlay built with Electron.",
+    link: "https://github.com/shariarSultanFahim/wifu-engine",
+    imageSrc: "/wifu-engine.png",
+  },
+  {
+    title: "Hazari Tally",
+    description:
+      "A digital scorekeeping application for the card game Hazari. Built with React Native and Expo.",
+    link: "https://github.com/shariarSultanFahim/Hazari-Tally-App",
+    imageSrc: "/Hazari-Tally.jpg",
+  },
+  {
+    title: "Project Three",
+    description: "Description for project three.",
+    link: "/project-three",
+    imageSrc: "/wifu-engine.png",
+  },
+  {
+    title: "Project Four",
+    description: "Description for project four.",
+    link: "/project-four",
+    imageSrc: "/wifu-engine.png",
+  },
+];
+---
+
+<section class="flex flex-col md:flex-row items-start gap-6 mb-16">
+  <div class="md:w-1/4 flex flex-col items-center gap-2">
+    <h1 class="text-xl md:text-2xl">Featured Projects</h1>
+    <img
+      class="w-20 h-12 rotate-[-120deg]"
+      src="/arrow.svg"
+      alt="Arrow Image"
+    />
+  </div>
+
+  <div class="md:w-3/4 grid md:grid-cols-2 gap-4">
+    {
+      projects.map((project) => (
+        <ProjectCard
+          title={project.title}
+          description={project.description}
+          imageSrc={project.imageSrc}
+          detailsUrl={project.link}
+          ctaText="View Project"
+        />
+      ))
+    }
+  </div>
+</section>
