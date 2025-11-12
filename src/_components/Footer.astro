@@ -1,0 +1,47 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<footer class="bg-black text-white py-8 border-t-4 border-black text-center">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-center space-x-6 mb-4">
+      <ul class="flex flex-row gap-6 text-2xl text-muted">
+        <li>
+          <a
+            href="https://www.linkedin.com/in/shariarsultan/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name={"lucide:linkedin"} />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/being_shariar">
+            <Icon name={"lucide:instagram"} />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/shariarSultanFahim"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name={"lucide:github"} />
+          </a>
+        </li>
+      </ul>
+    </div>
+    <p class="text-base text-gray-400">
+      &copy; 2025 Shariar Sultan Fahim. All rights reserved.
+    </p>
+    <p
+      class="inline-flex items-center justify-center gap-1 text-base text-gray-400"
+    >
+      Built with <a href="https://astro.build" target="_blank" class="text-lg"
+        ><Icon name="vscode-icons:file-type-astro" title="Astro" /></a
+      > and <a href="https://tailwindcss.com" target="_blank" class="text-lg"
+        ><Icon name="vscode-icons:file-type-tailwind" title="Tailwind CSS" /></a
+      >
+    </p>
+  </div>
+</footer>
