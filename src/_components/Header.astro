@@ -2,21 +2,14 @@
 import Button from "@/_components/Button.astro";
 ---
 
-<header class="pt-[20px]">
+<header class="pt-[20px] hidden md:block">
   <nav
     class="container mx-auto flex justify-center mb-8 md:mb-0 md:justify-end items-center"
   >
-    <div class="space-x-3 flex items-center">
-      <a
-        href="#projects"
-        class="text-secondary hover:text-indigo-600 font-medium">Projects</a
-      >
-      <a
-        href="#experience"
-        class="text-secondary hover:text-indigo-600 font-medium"
-        >Work Experience</a
-      >
-      <Button href="#contact" label="Hire" type="primary" />
-    </div>
+    <Button
+      href="https://drive.google.com/file/d/1W3NSpBlUO5YuDJjF66wOuzbxIwetUms4/view"
+      label="Resume"
+      type="primary"
+    />
   </nav>
 </header>

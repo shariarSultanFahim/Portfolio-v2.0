@@ -17,6 +17,12 @@ const {
 const aria = ariaLabel ?? label;
 ---
 
-<a class="inline-block" href={href} aria-label={aria}>
-  <button class=`manga-btn manga-btn-${type}`> {label} </button>
+<a
+  class="inline-block"
+  href={href}
+  aria-label={aria}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button class={`manga-btn manga-btn-${type}`}>{label}</button>
 </a>
